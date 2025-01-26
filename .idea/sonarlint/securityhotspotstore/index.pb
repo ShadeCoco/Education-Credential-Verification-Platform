@@ -11,3 +11,5 @@ P
  contracts/access-management.clar,a/c/ac0b0999b7cf0073dae97505137ecd206a35d85c
 O
 tests/access-management.test.ts,5/9/59882dffbacdce2d882c39c74f684e888577d0e2
+T
+$contracts/verification-requests.clar,f/a/fa8b632bcf780bc6a2dfd1e3440b77a994a158ac
