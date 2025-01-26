@@ -9,3 +9,5 @@ S
 #tests/credential-management.test.ts,1/6/169e8ebd2056bf2b79545d1706ac0315d5d4caed
 P
  contracts/access-management.clar,a/c/ac0b0999b7cf0073dae97505137ecd206a35d85c
+O
+tests/access-management.test.ts,5/9/59882dffbacdce2d882c39c74f684e888577d0e2

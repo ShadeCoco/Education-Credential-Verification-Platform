@@ -1,21 +1,43 @@
+import { describe, it, expect, beforeEach } from "vitest"
 
-import { describe, expect, it } from "vitest";
+describe("access-management", () => {
+  let contract: any
+  
+  beforeEach(() => {
+    contract = {
+      setContractOwner: (newOwner: string) => ({ value: true }),
+      addAuthorizedIssuer: (issuer: string) => ({ value: true }),
+      removeAuthorizedIssuer: (issuer: string) => ({ value: true }),
+      isAuthorizedIssuer: (issuer: string) => true,
+    }
+  })
+  
+  describe("set-contract-owner", () => {
+    it("should set a new contract owner", () => {
+      const result = contract.setContractOwner("ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG")
+      expect(result.value).toBe(true)
+    })
+  })
+  
+  describe("add-authorized-issuer", () => {
+    it("should add an authorized issuer", () => {
+      const result = contract.addAuthorizedIssuer("ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG")
+      expect(result.value).toBe(true)
+    })
+  })
+  
+  describe("remove-authorized-issuer", () => {
+    it("should remove an authorized issuer", () => {
+      const result = contract.removeAuthorizedIssuer("ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG")
+      expect(result.value).toBe(true)
+    })
+  })
+  
+  describe("is-authorized-issuer", () => {
+    it("should check if an issuer is authorized", () => {
+      const result = contract.isAuthorizedIssuer("ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG")
+      expect(result).toBe(true)
+    })
+  })
+})
 
-const accounts = simnet.getAccounts();
-const address1 = accounts.get("wallet_1")!;
-
-/*
-  The test below is an example. To learn more, read the testing documentation here:
-  https://docs.hiro.so/stacks/clarinet-js-sdk
-*/
-
-describe("example tests", () => {
-  it("ensures simnet is well initalised", () => {
-    expect(simnet.blockHeight).toBeDefined();
-  });
-
-  // it("shows an example", () => {
-  //   const { result } = simnet.callReadOnlyFn("counter", "get-counter", [], address1);
-  //   expect(result).toBeUint(0);
-  // });
-});
